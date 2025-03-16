@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=zodiak@1&display=swap');
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -12,15 +13,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
+  }
+} */
+
+body {
+  /* background: var(--background); */
+  background: "fff";
+  /* color: var(--foreground); */
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand-green {
+  background-color: #094632;
+}
+
+.brand-red {
+  background-color: #f0281e;
+}
+
+.brand-gray {
+  background-color: #888888; 
+}
+
+.brand-blue {
+  background-color: #283791;
+}
+
+.brand-gray-light {
+  background-color: #ebebeb ;
+}
+
+.client-logo {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.zodiak {
+  font-family: "Zodiak", serif;
+}
+
+.link:hover::after {
+  content: url('/public/scribble.svg');
+  display: block;
+  width: 100%; /* Make it fit the width of the text */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Optional: adjust the distance between the text and the image */
+  object-fit: contain;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+
