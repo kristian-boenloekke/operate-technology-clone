@@ -11,7 +11,7 @@ export default function ProcessSection() {
             <Heading className={'text-black font-semibold'}>
                 Få et indblik i vores hverdag
             </Heading>
-            <div className="grid grid-cols-2 grid-rows-2 gap-6 pt-[24px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-auto gap-6 pt-[24px]">
                 <ProcessCard
                     src="/analyse.svg"
                     heading={"analyse"}
@@ -22,19 +22,19 @@ export default function ProcessSection() {
                     src="/design.svg"
                     heading={"design"}
                 >
-                    Vi starter altid med en grundig analyse af jeres organisation, målgruppe og domæne. Ved at forstå jeres behov skaber vi en strategisk retning, der dækker jeres behov og krav. Vi kombinerer data og vores erfaring for at lægge fundamentet til en succesfuld digital løsning.
+                    Vores designer skaber brugervenlige og æstetiske løsninger, der engagerer din målgruppe. Vi arbejder med wireframes, Figma-prototyper og løbende feedback for at sikre, at hver detalje understøtter jeres CVI og leverer en solid brugeroplevelse med korrekt webtilgængelighed.
                 </ProcessCard>
                 <ProcessCard
                     src="/implementering.svg"
                     heading={"implementering"}
                 >
-                    Vi starter altid med en grundig analyse af jeres organisation, målgruppe og domæne. Ved at forstå jeres behov skaber vi en strategisk retning, der dækker jeres behov og krav. Vi kombinerer data og vores erfaring for at lægge fundamentet til en succesfuld digital løsning.
+                   Fra koncept til virkelighed – vi udfører en fejlfri implementering af løsningen, da vores proces er gennemsigtig, effektiv og præget af en tæt dialog. Krydret med vores erfaring fra lignende projekter, opnår vi en platform som opfylder alle jeres krav.
                 </ProcessCard>
                 <ProcessCard
                     src="/udvikling.svg"
                     heading={"udvikling"}
                 >
-                    Vi starter altid med en grundig analyse af jeres organisation, målgruppe og domæne. Ved at forstå jeres behov skaber vi en strategisk retning, der dækker jeres behov og krav. Vi kombinerer data og vores erfaring for at lægge fundamentet til en succesfuld digital løsning.
+                    Vi udvikler skræddersyede løsninger og moduler, når der er brug for det og læner os ellers op af Drupals fantastiske community. Vores moduler tager udgangspunkt i specifikke brugsmønstre og konkrete behov. Sammen skaber vi digitale løsninger, der gør en forskel.
                 </ProcessCard>
 
             </div>
