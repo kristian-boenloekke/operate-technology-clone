@@ -12,7 +12,7 @@ const links = [
 
 export default function Footer() {
     return (
-        <footer className="brand-red text-white md:p-[5vw] space-y-6 py-[70px] px-6 md:px-[max(24px,calc(24px+(100vw-768px)*0.05))] lg:px-[max(24px,calc(24px+(100vw-1024px)*0.08))]">
+        <footer className="brand-red text-white md:p-[5vw] space-y-6 py-[70px] px-6 md:px-[max(24px,calc(24px+(100vw-768px)*0.08))] lg:px-[max(24px,calc(24px+(100vw-1024px)*0.30))]">
             <div className="flex flex-col md:flex-row gap-6 justify-between w-full">
 
 
