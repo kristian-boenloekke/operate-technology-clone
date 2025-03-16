@@ -1,13 +1,15 @@
 
 import Image from "next/image";
 import BurgerMenu from "./BurgerMenu";
+import Link from "next/link";
 
 export default function Header() {
 
     return (
         <header className="bg-black/20 p-3 fixed top-0 left-0 right-0 z-20 flex justify-between items-center w-full">
-
-            <Image src={'/logo.svg'} alt="logo" width={300} height={86} className="w-30 lg:w-35" />
+            <Link href={'#'}>
+                <Image src={'/logo.svg'} alt="logo" width={300} height={86} className="w-30 lg:w-35" />
+            </Link>
 
             <div className="flex gap-6 items-center">
 

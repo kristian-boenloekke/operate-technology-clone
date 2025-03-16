@@ -16,7 +16,7 @@ const clientLogos = [
   "/clients/11.png",
   "/clients/12.png",
   "/clients/13.png",
-  "/clients/14.png",
+  // "/clients/14.png",
 ];
 
 export default function ClientsSection() {
