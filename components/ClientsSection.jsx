@@ -1,6 +1,6 @@
 'use client'
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
 const clientLogos = [
   "/clients/1.svg",
@@ -17,83 +17,72 @@ const clientLogos = [
   "/clients/12.png",
   "/clients/13.png",
   // "/clients/14.png",
-];
+]
 
 export default function ClientsSection() {
-  // Initialize with first 10 logos
-  const [visibleLogos, setVisibleLogos] = useState(clientLogos.slice(0, 10));
-  const [fadeIndex, setFadeIndex] = useState(null);
-  const [isChanging, setIsChanging] = useState(false);
-  const [imageStatuses, setImageStatuses] = useState({});
+  const [visibleLogos, setVisibleLogos] = useState(clientLogos.slice(0, 10))
+  const [fadeIndex, setFadeIndex] = useState(null)
+  const [isChanging, setIsChanging] = useState(false)
+  const [imageStatuses, setImageStatuses] = useState({})
 
-  // Function to handle image load success
-  const handleImageLoad = (logoPath) => {
+  function handleImageLoad(logoPath) {
     setImageStatuses(prev => ({
       ...prev,
       [logoPath]: 'loaded'
-    }));
-  };
+    }))
+  }
 
-  // Function to handle image load error
-  const handleImageError = (logoPath) => {
+  function handleImageError(logoPath) {
     setImageStatuses(prev => ({
       ...prev,
       [logoPath]: 'error'
-    }));
-    console.error(`Failed to load image: ${logoPath}`);
-  };
+    }))
+    console.error(`Failed to load image: ${logoPath}`)
+  }
 
-  // Function to rotate logos with fade effect
+ 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (isChanging) return; // Skip if transition is already in progress
+      if (isChanging) return 
       
-      // Choose a random index for replacement (0-9)
-      const indexToReplace = Math.floor(Math.random() * 10);
+      const indexToReplace = Math.floor(Math.random() * 10)
       
-      // Start the fade-out process
-      setFadeIndex(indexToReplace);
-      setIsChanging(true);
+      setFadeIndex(indexToReplace)
+      setIsChanging(true)
       
-      // After 500ms (matching fade-out duration), swap the logo
       setTimeout(() => {
         setVisibleLogos(prev => {
-          const newLogos = [...prev];
+          const newLogos = [...prev]
           
-          // Current visible logos
-          const currentSet = new Set(newLogos);
+          const currentSet = new Set(newLogos)
           
-          // Find logos that aren't currently visible
           const remainingLogos = clientLogos.filter(logo => 
             !currentSet.has(logo) && imageStatuses[logo] !== 'error'
-          );
+          )
           
-          // If we have remaining logos, use one of them
           if (remainingLogos.length > 0) {
-            // Choose a random logo from the remaining ones
-            const randomIndex = Math.floor(Math.random() * remainingLogos.length);
-            newLogos[indexToReplace] = remainingLogos[randomIndex];
+            const randomIndex = Math.floor(Math.random() * remainingLogos.length)
+            newLogos[indexToReplace] = remainingLogos[randomIndex]
           }
           
-          return newLogos;
-        });
+          return newLogos
+        })
         
-        // After another 50ms, start the fade-in effect
         setTimeout(() => {
-          setFadeIndex(null);
-          setIsChanging(false);
-        }, 50);
-      }, 500);
-    }, 3000);
+          setFadeIndex(null)
+          setIsChanging(false)
+        }, 50)
+      }, 500)
+    }, 3000)
 
-    return () => clearInterval(interval);
-  }, [isChanging, imageStatuses]);
+    return () => clearInterval(interval)
+  }, [isChanging, imageStatuses])
 
   return (
     <div className="px-10 py-[70px]">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {visibleLogos.map((logo, index) => {
-          const logoIndex = clientLogos.indexOf(logo) + 1;
+          const logoIndex = clientLogos.indexOf(logo) + 1
           return (
             <div
               key={`${logo}-${index}`}
@@ -122,9 +111,9 @@ export default function ClientsSection() {
                 )}
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }
