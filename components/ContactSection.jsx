@@ -6,7 +6,8 @@ import Section from "./Section";
 
 export default function ContactSection() {
     return (
-        <Section className="brand-gray-light">
+        <Section className="brand-gray-light flex flex-col lg:flex-row lg:gap-10">
+            <div className="lg:w-1/2 lg:flex-1">
             <SectionTitle className={'text-black'}> Kontakt os</SectionTitle>
 
             <Heading className={'text-black font-semibold'}>
@@ -18,8 +19,9 @@ export default function ContactSection() {
             </p>
 
             <CustomLink>Skriv til os</CustomLink>
+             </div>
 
-            <Image src={'/ai-worker.png'} width={2000} height={2000} alt="programmer"  className="mt-6"/>
+            <Image src={'/ai-worker-2.webp'} width={2000} height={2000} alt="programmer"  className="mt-6 lg:w-1/2 lg:h-auto"/>
 
         </Section>
     )
